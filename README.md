@@ -1,3 +1,3 @@
 # Huerta-Rojas_evaluacion1
-Basthian Rojas-Pablo Huerta
-Acuahorro
+Integrantes: Basthian Rojas-Pablo Huerta
+Nombre proyecto: Acuahorro
