@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"
+      text="Volver"
+      color="primary"
+      mode="ios">
+ </ion-back-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-img class="logo" src="/assets/icon/Logo.png"></ion-img>
+  </ion-buttons>
+    <ion-title class="title">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondos">
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()" class="formulario">
+
+    <ion-list-header>
+      <ion-label class="tituloformulario">Registrate para recibir noticias al dia:</ion-label>
+    </ion-list-header>
+    <ion-item class="formulario">
+      <ion-label position="floating">
+        País:
+      </ion-label>
+      <ion-input type="text" placeholder="Pais" [(ngModel)]= "usuario.pais" name="pais" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="formulario">
+      <ion-label position="floating">
+        Dirección:
+      </ion-label>
+      <ion-input type="text" placeholder="Direccion" [(ngModel)]= "usuario.direccion" name="direccion" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="formulario">
+      <ion-label position="floating">
+        Telefono:
+      </ion-label>
+      <ion-input type="number" placeholder="Telefono" [(ngModel)]= "usuario.telefono" name="telefono" required>
+      </ion-input>
+    </ion-item>
+
+
+    <ion-item class="formulario">
+      <ion-label position="floating">Email: </ion-label>
+      <ion-input type="email" placeholder="Email"
+                 name="email" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="formulario">
+      <ion-label position="floating">Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                 name="password" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button  class="boton" [disabled] ="formulario.invalid"
+        type="submit" expand="block" routerLink="/inicio">
+      Registrarse
+    </ion-button>
+
+
+  </form>
+</ion-content>
