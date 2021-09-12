@@ -15,16 +15,22 @@
 </ion-header>
 
 <ion-content class="fondos">
+  <ion-card class="card">
   <form #formulario="ngForm" (ngSubmit) ="onSubmit()" class="formulario">
 
     <ion-list-header>
-      <ion-label class="tituloformulario">Registrate para recibir noticias al dia:</ion-label>
+      <ion-label class="tituloformulario">Registro usuario:</ion-label>
+    
     </ion-list-header>
+    <ion-list-header>
+      <p class="subtitulo"> ¡Registrandote nos facilitaras el envio de nuevas noticias, consejos y metodos para cuidar el agua!</p>
+    </ion-list-header>
+   
     <ion-item class="formulario">
       <ion-label position="floating">
         País:
       </ion-label>
-      <ion-input type="text" placeholder="Pais" [(ngModel)]= "usuario.pais" name="pais" required>
+      <ion-input class="formulario" type="text" placeholder="Pais" [(ngModel)]= "usuario.pais" name="pais" required>
       </ion-input>
     </ion-item>
 
@@ -61,12 +67,31 @@
                  required>
       </ion-input>
     </ion-item>
+    <ion-list-header>
+      <label class="formulario" style="font-size: small;"> ¿Desea recibir notificaciones?</label><br>
+    </ion-list-header>
+   <br>
+    <ion-list class="formulario" style="margin-left:80px">
+            <input  type="radio" value="si"   [(ngModel)]= "usuario.opcion" name="opcion"> Si
+            <input style="margin-left: 30px;"type="radio" value="no"  [(ngModel)]= "usuario.opcion" name="opcion"> No
+    </ion-list>
+    
+    
+<br>
 
-    <ion-button  class="boton" [disabled] ="formulario.invalid"
+    <ion-item class="formulario">
+      <ion-button  class="boton" [disabled] ="formulario.invalid"
         type="submit" expand="block" routerLink="/inicio">
       Registrarse
     </ion-button>
+    <ion-button  class="boton" slot="end"
+        type="reset" expand="block" >
+      Limpiar
+    </ion-button>
+    </ion-item>
+    
 
 
   </form>
+</ion-card>
 </ion-content>

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetPage } from '../action-sheet/action-sheet.page';
+import { MenuController } from '@ionic/angular';
 interface Componente{
   icon: string;
   name: string;
-  redirectTo: string;
+  redirecTo:string;
+
 }
 @Component({
   selector: 'app-inicio',
@@ -11,21 +12,21 @@ interface Componente{
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  componentes: Componente[] =[
+  componentes : Componente[] =[
     {
-      icon: 'bug-outline',
-      name:'Action Sheet',
-      redirectTo:'/action-sheet'
+      icon: 'paw-outline',
+      name: 'Action Sheet', 
+      redirecTo: '/informacion'
     },
-    {
-      icon:'sunny-outline',
-      name: 'Alert',
-      redirectTo:'/alert'
-    },
-  ];
-  constructor() { }
+  
+   
+  ]
 
+
+  constructor(private menuController: MenuController) { }
   ngOnInit() {
   }
-
+  mostrarMenu(){
+    this.menuController.open('first');
+  }
 }

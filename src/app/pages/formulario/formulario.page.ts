@@ -12,6 +12,7 @@ export class FormularioPage implements OnInit {
     direccion:'',
     pais:'',
     telefono:'',
+    opcion:'',
 
   }
   constructor() { }
