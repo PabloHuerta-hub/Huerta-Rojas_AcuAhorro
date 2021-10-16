@@ -18,46 +18,28 @@
 
 <ion-content class="fondos">
 
-    <ion-card class="card">
-      <ion-card-header>
-        <ion-card-subtitle class="subtitulo">Proyecto AcuAhorro</ion-card-subtitle>
-        <ion-card-title class="titulo">Sobre nuestro proyecto:</ion-card-title>
-      </ion-card-header>
-      <ion-card-content class="contenido">
-        AcuAhorro es una empresa que quiere cuidar el agua a nivel nacional y evitar su explotación por empresas.
-      Tomamos registros medioambientales y aconsejamos al publico como cuidar el agua ya que a pesar de que el planeta tierra sea un 70% de agua casi su totalidad es agua salada, mientras el agua apta para consumo solo llega al 3% segun informes de la fundacion <a class="contenido" href="https://www.wearewater.org/es">We Are Water.</a>
-      
-      </ion-card-content>
-    </ion-card>
-
-
-  <ion-card class="card">
-    <ion-item class="card">  
-      <ion-icon color="primary" name="information-circle-outline"> </ion-icon>
-      <ion-label class="titulo"> Evita lanzar estas cosas a tu desagüe:</ion-label>
-    </ion-item>
-
-    <ion-card-content>
-    <a href="#" target="_blank"><ion-img src="/assets/img/Agua sucia.jpg" ></ion-img></a>
-   
-  </ion-card-content>
-
-  </ion-card>
-
-
-  <ion-card class="card">
-    <ion-item class="card">  
-      <ion-icon color="primary" name="information-circle-outline"> </ion-icon>
-      <ion-label class="titulo"> Consejos para ahorrar:</ion-label>
-    </ion-item>
-
-    <ion-card-content>
-    <a href="#" target="_blank"><ion-img src="/assets/img/tips.jpg" ></ion-img></a>
-   
-  </ion-card-content>
-
-  </ion-card>
-
+   <ion-grid fixed>
+     <ion-row>
+       <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" 
+       *ngFor="let noticia of noticias; let i=index"> 
+       <ion-card class="card">
+        <ion-card-header>
+          <ion-card-title  class="titulo">{{noticia.title}}</ion-card-title>
+        </ion-card-header>
+        <a href="{{noticia.url}}">
+        <ion-img 
+        *ngIf="noticia.image_url"
+        [src]="noticia.image_url"></ion-img>
+      </a>
+        <ion-card-content>
+          <p class="contenido">
+            {{noticia.description}}
+          </p>
+        </ion-card-content>
+       </ion-card>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
 
 
 </ion-content>

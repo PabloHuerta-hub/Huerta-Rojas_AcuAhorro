@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import {NoticiasService} from 'src/app/services/noticias.service';
+import {Datum} from '../../interfaces/interfaces';
 interface Componente{
   icon: string;
   name: string;
@@ -23,10 +25,16 @@ export class InicioPage implements OnInit {
   ]
 
 
-  constructor(private menuController: MenuController) { }
+  constructor(private menuController: MenuController, private noticiasService: NoticiasService) { }
+  noticias: Datum[]=[]
   ngOnInit() {
+    this.noticiasService.getTopHeadLines().subscribe(resp=>{
+      console.log('noticias',resp);
+      this.noticias.push(...resp.data);
+    });
   }
   mostrarMenu(){
     this.menuController.open('first');
   }
 }
+  
