@@ -2,7 +2,7 @@
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar class="fondo">
-      <ion-img class="img" src="assets/icon/Logo.png"></ion-img>
+      <p  class="titulo"> Bienvenido/a @{{username.username}}</p>
       </ion-toolbar>
     </ion-header>
 
@@ -14,7 +14,16 @@
           <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
           {{ c.name }}
         </ion-item>
+       
       </ion-menu-toggle>
+      <ion-menu-toggle *ngFor="let l of icon">
+        <ion-item class="color" (click)="logout()"
+        detail=true>
+        <ion-icon [name]="l.icon" slot="start" color="primary" ></ion-icon>
+        {{l.name}}
+        </ion-item>
+      </ion-menu-toggle>
+     
       </ion-list>
     </ion-content>
     </ion-menu>

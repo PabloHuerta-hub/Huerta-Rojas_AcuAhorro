@@ -1,0 +1,24 @@
+<ion-header>
+</ion-header>
+
+<ion-content class=" fondos background">
+  <div class="centrado">
+  <p class="centrado" >
+<ion-card style="width: 350px;height:210px;">
+<ion-item>
+  <ion-label position="floating">Email</ion-label>
+  <ion-input type="text" [(ngModel)]="user.email" ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating" >Contraseña</ion-label>
+  <ion-input type="password"  [(ngModel)]="user.password" ></ion-input>
+</ion-item >
+<p align="center" >
+  <ion-button class="boton" size="medium" style="width:200px;" (click)="onLogin()">Ingresar</ion-button>
+  <br>
+</p>
+  <p align="center" class="contenido">No tienes una cuenta? <a href="/registro">Registrate</a></p>
+</ion-card>
+</p>
+</div>
+</ion-content>

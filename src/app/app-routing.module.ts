@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
      path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'ingreso-app',
     pathMatch: 'full'
   },
   {
@@ -16,9 +16,24 @@ const routes: Routes = [
     loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
   },
   {
-    path: 'formulario',
-    loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+{
+ path: 'login',
+loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+},
+{
+  path: 'admin',
+  loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+},
+
+
+{
+  path: 'ingreso-app',
+  loadChildren: () => import('./pages/ingreso-app/ingreso-app.module').then( m => m.IngresoAppPageModule)
+},
+
 
 ];
 
