@@ -12,13 +12,17 @@ export class FirestoreService {
  
 
   async getUid(){
+    try{
     const user = await this.auth.currentUser;
     if(user == null){
       return null;
     } else{
       return user.uid;
     }
+  }catch(error){
+  console.log(error);
   }
+}
 
   stateAuth(){
     return this.auth.authState

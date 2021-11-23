@@ -24,15 +24,15 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   async onLogin() {
+    try{
     const user = await this.AuthService.login(this.user)
     if(user){
       console.log('succesfully logged in!')
       this.router.navigateByUrl('/inicio')
     }
+  }catch(error){
+    console.log(error)
   }
-    
-
-
-
+}
 
 }

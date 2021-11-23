@@ -16,17 +16,19 @@ export class AuthService {
   }
   private path='usuarios/'
   //register
-  register(usuario:User, username:string){
-    return new Promise((resolve,reject)=>{
-   this.afaut.createUserWithEmailAndPassword(usuario.email,usuario.password).then(res => {
+  async register(usuario:User, username:string){
+    try{
+  return await this.afaut.createUserWithEmailAndPassword(usuario.email,usuario.password).then(res => {
      const uid = res.user.uid;
      this.db.collection('usuarios').doc(uid).set({
       username:username,
       uid:uid
     })
-    resolve(res)
-   }).catch(err => reject(err))
+
   })
+}catch (err) {
+  console.log('error para crear usuario',err)
+}
   }
 
   //login 

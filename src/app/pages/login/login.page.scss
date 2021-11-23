@@ -21,14 +21,24 @@
     border-radius: 10px;
     height:160px;
     width: 240px;
+    background-color: white;
 }
 .fondos{
     --background: lightblue;
     
 }
+.fondo2{
+    background-color: white;
+    --background: white;
+    color : black;
+}
+
 .contenido{
     color: black;
     text-align: center;
+}
+.letras{
+    color: black;
 }
 .background{
     --background: url('/../assets/img/fondologin.jpg') no-repeat center center / cover ; 

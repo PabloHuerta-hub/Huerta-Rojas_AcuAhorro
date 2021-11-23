@@ -11,9 +11,9 @@
 .card{
     
     border-radius: 10px;
-    height:330px;
+    height:300px;
     width: 350px;
-    
+    --background: white;
 }
 .toolbar{
     --background: rgb(133, 255, 133);
@@ -27,6 +27,11 @@
 .contenido{
     color: black;
     text-align: center;
+}
+.fondo2{
+    background-color: white;
+    --background: white;
+    color : black;
 }
 .boton{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

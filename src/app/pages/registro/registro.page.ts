@@ -19,9 +19,16 @@ export class RegistroPage implements OnInit {
   
   ngOnInit() {
   }
+
   onRegister(){
+    try{
+
+   
     this.AuthService.register(this.user,this.username).then(auth=>{
       this.router.navigate(['inicio'])
     })
+  }catch(error){
+    console.log(error)
   }
+}
 }
